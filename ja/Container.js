@@ -7,11 +7,13 @@ class Container {
 
   add(child) {
     this.children.push(child);
+
     return child;
   }
 
   remove(child) {
     this.children = this.children.filter(c => c !== child);
+
     return child;
   }
 
@@ -24,6 +26,7 @@ class Container {
       if (child.update) {
         child.update(dt, t, this);
       }
+      
       return child.dead ? false : true;
     });
   }

@@ -1,10 +1,14 @@
 import Game from "../ja/Game.js";
-import Squizz from "./entities/Squizz.js";
+import Board from "./entities/Board.js";
 
-const game = new Game(800, 400);
-const hero = new Squizz();
-game.scene.add(hero);
+const game = new Game(innerWidth, innerHeight);
+const { scene } = game;
+
+const board = new Board();
+
+scene.add(board);
 
 game.run((dt, t) => {
-    
+  
 });
+

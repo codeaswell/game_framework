@@ -67,6 +67,16 @@ class CanvasRenderer {
           }
         }
 
+        if (child.grid) {
+          for (let r = 0; r < child.row; r++) {
+            for (let c = 0; c < child.col; c++) {
+              ctx.lineWidth = child.gridLineStroke;
+              ctx.strokeStyle = child.gridColor;
+              ctx.strokeRect(c * child.tileWidth + child.pos.x, r * child.tileWidth + child.pos.y, child.tileWidth, child.tileWidth)
+            }
+          }
+        }
+
         if (child.texture) {
           const img = child.texture.img;
           if (child.tileW) {
